@@ -30,12 +30,12 @@
 // Use project enums instead of #define for ON and OFF.
 
 #include "xc.h"
-#include "libpic30.h"
+#include "libpic30.h"  //delay
 
-int main(void) {
-    unsigned char portVal; //deklaracja wszystkich  - w tym przypadku diod
-    AD1PCFG = 0xFFFF; // ustawienie portu a na tryb cyfrowy
-    TRISA = 0x0000; // ustawenie portu a na wyj?cie
+int mainx(void) {
+//    unsigned char portVal; //deklaracja wszystkich  - w tym przypadku diod
+//    AD1PCFG = 0xFFFF; // ustawienie portu a na tryb cyfrowy
+//    TRISA = 0x0000; // ustawenie portu a na wyj?cie
 //    
 //    while(1){
 //        portVal = 0x55; //diody - 1,3,5,7
@@ -68,6 +68,7 @@ int main(void) {
 //        __delay32(1000000); 
 //    }
     //Zad3
+    
     
     return -1;
 }

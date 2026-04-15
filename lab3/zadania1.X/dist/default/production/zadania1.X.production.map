@@ -19,6 +19,7 @@ Command:
   -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33F/gld \
   build/default/production/newmainXC16.o \
+  build/default/production/newmainXC161.o \
   --defsym=__MPLAB_BUILD=1 \
   -Tp24FJ128GA010.gld.00 \
   --stack=16 \
@@ -67,10 +68,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xce           0x135  (309)
-.text                        0x2ce                0x20            0x30  (48)
-.init.delay32                0x2ee                0x1c            0x2a  (42)
+.text                        0x2ce               0x14e           0x1f5  (501)
+.init.delay32                0x41c                0x1c            0x2a  (42)
 
-                 Total "program" memory used (bytes):          0x18f  (399) <1%
+                 Total "program" memory used (bytes):          0x354  (852) <1%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -97,21 +98,23 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000252                  __data_init
                   0x000252                  __data_init_standard
+                  0x000252                  __data_init
                   0x0002c8                  __DefaultInterrupt
                   0x0002ce                  _main
-                  0x0002ee                  ___delay32
+                  0x000388                  _mainx
+                  0x00041c                  ___delay32
 
 External Symbols in Program Memory (by name):
 
                   0x0002c8                  __DefaultInterrupt
-                  0x0002ee                  ___delay32
+                  0x00041c                  ___delay32
                   0x000252                  __data_init
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
                   0x0002ce                  _main
+                  0x000388                  _mainx
 
 Memory Configuration
 
@@ -129,6 +132,7 @@ CONFIG1          0x0157fe           0x000002
 Linker script and memory map
 
 LOAD build/default/production/newmainXC16.o
+LOAD build/default/production/newmainXC161.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD pPIC24Fxxx
 LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libfx-elf.a
@@ -182,22 +186,31 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x1e5
+.debug_info       0x000000        0x725
  *(.debug_info)
- .debug_info      0x000000        0x1e5 build/default/production/newmainXC16.o
+ .debug_info      0x000000        0x381 build/default/production/newmainXC16.o
+ .debug_info      0x000381        0x3a4 build/default/production/newmainXC161.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000         0x6c
+.debug_abbrev     0x000000        0x15c
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0x6c build/default/production/newmainXC16.o
+ .debug_abbrev    0x000000         0xae build/default/production/newmainXC16.o
+ .debug_abbrev    0x0000ae         0xae build/default/production/newmainXC161.o
 
-.debug_line       0x000000        0x11a
+.debug_line       0x000000        0x267
  *(.debug_line)
- .debug_line      0x000000        0x11a build/default/production/newmainXC16.o
+ .debug_line      0x000000        0x134 build/default/production/newmainXC16.o
+ .debug_line      0x000134        0x133 build/default/production/newmainXC161.o
 
-.debug_frame      0x000000         0x2e
+.debug_frame      0x000000         0x5c
  *(.debug_frame)
  .debug_frame     0x000000         0x2e build/default/production/newmainXC16.o
+ .debug_frame     0x00002e         0x2e build/default/production/newmainXC161.o
+
+.debug_str        0x000000         0x14
+ *(.debug_str)
+ .debug_str       0x000000          0xa build/default/production/newmainXC16.o
+ .debug_str       0x00000a          0xa build/default/production/newmainXC161.o
 
 .debug_loc
  *(.debug_loc)
@@ -206,18 +219,22 @@ __CONFIG1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000         0x1b
+                  0x000000         0x37
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x1b build/default/production/newmainXC16.o
+                  0x000000         0x1c build/default/production/newmainXC16.o
+ .debug_pubnames
+                  0x00001c         0x1b build/default/production/newmainXC161.o
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000         0x18
+.debug_aranges    0x000000         0x30
  *(.debug_aranges)
  .debug_aranges
                   0x000000         0x18 build/default/production/newmainXC16.o
+ .debug_aranges
+                  0x000018         0x18 build/default/production/newmainXC161.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -799,20 +816,24 @@ OUTPUT(dist/default/production/zadania1.X.production.elf elf32-pic30)
 LOAD default_isr
 
 .debug_pubtypes
-                  0x000018         0x1f
+                  0x000030         0x7c
  .debug_pubtypes
-                  0x000018         0x1f build/default/production/newmainXC16.o
+                  0x000030         0x3e build/default/production/newmainXC16.o
+ .debug_pubtypes
+                  0x00006e         0x3e build/default/production/newmainXC161.o
 
 __c30_signature
-                  0x000037         0x18
+                  0x0000ac         0x1e
  __c30_signature
-                  0x000037          0x6 build/default/production/newmainXC16.o
+                  0x0000ac          0x6 build/default/production/newmainXC16.o
  __c30_signature
-                  0x00003d          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
+                  0x0000b2          0x6 build/default/production/newmainXC161.o
  __c30_signature
-                  0x000043          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
+                  0x0000b8          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x000049          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
+                  0x0000be          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
+ __c30_signature
+                  0x0000c4          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
 
 .config_JTAGEN    0x0157fe          0x2
  .config_JTAGEN
@@ -821,10 +842,12 @@ __c30_signature
 .config_IESO      0x0157fc          0x2
  .config_IESO     0x0157fc          0x2 build/default/production/newmainXC16.o
 
-.text             0x0002ce         0x20
- .text            0x0002ce         0x20 build/default/production/newmainXC16.o
+.text             0x0002ce        0x14e
+ .text            0x0002ce         0xba build/default/production/newmainXC161.o
                   0x0002ce                  _main
+ .text            0x000388         0x94 build/default/production/newmainXC16.o
+                  0x000388                  _mainx
 
-.init.delay32     0x0002ee         0x1c
- .init.delay32    0x0002ee         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
-                  0x0002ee                  ___delay32
+.init.delay32     0x00041c         0x1c
+ .init.delay32    0x00041c         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
+                  0x00041c                  ___delay32
