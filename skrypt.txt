@@ -1,0 +1,54 @@
+Slajd 1 – Tytuł
+
+Tematem mojej prezentacji są mikrokontrolery CPU PIC18 oraz PIC24, czyli układy wykorzystywane w systemach wbudowanych.”
+
+
+Slajd 2 – Mikrokontrolery PIC
+
+„Na początek warto wyjaśnić, czym są mikrokontrolery PIC.
+Jest to szeroka rodzina układów stosowanych w elektronice i automatyce.
+Charakteryzują się one dużą uniwersalnością oraz tym, że występują w wielu wersjach dopasowanych do różnych zastosowań.
+Do najważniejszych serii należą PIC16, PIC18 oraz PIC24, które różnią się głównie wydajnością, architekturą oraz możliwościami sprzętowymi.”
+
+
+Slajd 3 – CPU PIC24 i PIC18
+
+„Mikrokontrolery PIC18 i PIC24 są produkowane przez firmę Microchip Technology.
+Należą do układów typu RISC, co oznacza, że wykorzystują uproszczony zestaw instrukcji, dzięki czemu działają szybciej i efektywniej.
+Są one bardzo często stosowane w systemach wbudowanych, ponieważ w jednym układzie łączą procesor, pamięć oraz różne peryferia.
+Dzięki temu można tworzyć wydajne i kompaktowe urządzenia elektroniczne.”
+
+
+Slajd 4 – CPU PIC18
+
+„Mikrokontrolery PIC18 są jednostkami 8-bitowymi.
+Wykorzystują zmodyfikowaną architekturę harwardzką, oznacza to, że pamięć programu i danych są oddzielone, co przyspiesza działanie.
+Są często stosowane w prostszych układach, takich jak systemy sterowania, zasilacze, interfejsy np. USB lub CAN.”
+
+
+Slajd 5 – CPU PIC24
+
+„Mikrokontrolery PIC24 to nowocześniejsze jednostki 16-bitowe.
+Zapewniają one znacznie większą wydajność niż PIC18, co pozwala na realizację bardziej wymagających zadań.
+Posiadają liniową przestrzeń adresową pamięci, co upraszcza programowanie i zarządzanie danymi.
+Są wykorzystywane w bardziej zaawansowanych systemach, takich jak sterowniki silników, urządzenia pomiarowe, interfejsy graficzne czy systemy audio.”
+
+
+Slajd 6 – Porównanie
+
+„Porównując oba mikrokontrolery, można zauważyć, że PIC18 to układy 8-bitowe przeznaczone raczej do prostszych zastosowań.
+Z kolei PIC24 to jednostki 16-bitowe, które oferują większą moc obliczeniową i są stosowane w bardziej zaawansowanych systemach.
+Różnią się więc głównie wydajnością i poziomem zaawansowania.”
+
+
+Slajd 7 – Podsumowanie
+
+„Podsumowując, PIC18 to dobre rozwiązanie do prostych projektów, gdzie nie jest wymagana duża moc obliczeniowa.
+Natomiast PIC24 sprawdzi się w bardziej wymagających aplikacjach, gdzie potrzebna jest większa wydajność i więcej funkcji.
+Oba typy mikrokontrolerów programuje się w środowisku MPLAB IDE, najczęściej w języku C.”
+
+
+🎤 Slajd 8 – Zakończenie
+
+„Dziękuję za uwagę.
+Czy są jakieś pytania?”
