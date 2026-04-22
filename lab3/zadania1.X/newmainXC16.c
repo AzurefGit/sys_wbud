@@ -36,7 +36,7 @@ unsigned int decimalToGray(unsigned int n) {
     return n ^ (n >> 1);
 }
 
-int mainx(void) {
+int main(void) {
     unsigned char portVal; //deklaracja wszystkich  - w tym przypadku diod
     AD1PCFG = 0xFFFF; // ustawienie portu a na tryb cyfrowy
     TRISA = 0x0000; // ustawenie portu a na wyj?cie
@@ -72,18 +72,19 @@ int mainx(void) {
 //        __delay32(1000000); 
 //    }
     
-    //Zad3
+    //Zad3 pierwsza dioda swieci, reszta mryga
 //    int i = 0;
 //    while (1) {
 //        LATA = decimalToGray(i);
-//        i++;
+//     
 //        if (i > 255){
 //            i = 0;
 //            __delay32(1000000); 
 //        }
+//           i++;
 //    }
     
-    //Zad4
+    //Zad4 rosnie i maleje 
 //    int i = 255;
 //    while (1) {
 //        LATA = decimalToGray(i);
@@ -93,7 +94,7 @@ int mainx(void) {
 //        }
 //        __delay32(1000000);
 //    }
-    
+//    
     //Zad5
 //    int dziesiatki = 0;
 //    int jednosci   = 0;
@@ -112,7 +113,7 @@ int mainx(void) {
 //            }
 //        }
 //    }
-    
+//    
     //Zad6
 //    int dziesiatki = 9;
 //    int jednosci   = 9;
@@ -186,31 +187,31 @@ int mainx(void) {
 //    }
     
     //zad9
-    unsigned char lfsr = 0x01; // Stan pocz?tkowy (dowolny niezerowy)
-    unsigned char mask = 0x33; // Maska tapsów: bity 0,1,4,5
- 
-    while (1) {
-        // Wy?wietlamy aktualny stan na 6 diodach (bity [5:0] ? LATA[5:0])
-        LATA = lfsr & 0x3F;
-        __delay32(1000000);
- 
-        // Obliczamy nowy bit jako XOR tapsowanych bitów
-        unsigned char tapped = lfsr & mask;
-        // Parzyste XOR wszystkich bitów w 'tapped'
-        unsigned char newbit = 0;
-        unsigned char tmp = tapped;
-        while (tmp) {
-            newbit ^= (tmp & 1);
-            tmp >>= 1;
-        }
- 
-        // Przesuni?cie rejestru w lewo + wstawienie nowego bitu na pozycj? 0
-        lfsr = ((lfsr << 1) | newbit) & 0x3F;
- 
-        // Zabezpieczenie przed stanem zerowym (lock-up)
-        if (lfsr == 0x00){
-            lfsr = 0x01;
-        }
-    }
+//    unsigned char lfsr = 0x01; // Stan pocz?tkowy (dowolny niezerowy)
+//    unsigned char mask = 0x33; // Maska tapsów: bity 0,1,4,5
+// 
+//    while (1) {
+//        // Wy?wietlamy aktualny stan na 6 diodach (bity [5:0] ? LATA[5:0])
+//        LATA = lfsr & 0x3F;
+//        __delay32(1000000);
+// 
+//        // Obliczamy nowy bit jako XOR tapsowanych bitów
+//        unsigned char tapped = lfsr & mask;
+//        // Parzyste XOR wszystkich bitów w 'tapped'
+//        unsigned char newbit = 0;
+//        unsigned char tmp = tapped;
+//        while (tmp) {
+//            newbit ^= (tmp & 1);
+//            tmp >>= 1;
+//        }
+// 
+//        // Przesuni?cie rejestru w lewo + wstawienie nowego bitu na pozycj? 0
+//        lfsr = ((lfsr << 1) | newbit) & 0x3F;
+// 
+//        // Zabezpieczenie przed stanem zerowym (lock-up)
+//        if (lfsr == 0x00){
+//            lfsr = 0x01;
+//        }
+//    }
     return -1;
 }

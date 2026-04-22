@@ -9,7 +9,7 @@
 #include "xc.h"
 #include "libpic30.h"  //delay
 
-int main(void) {
+int mainx(void) {
 //    unsigned portVal = 0x0001;    //ustalenie pocz?tkowego stanu diody
 //    char current6 = 0; int prev6 = 0; //zmienne do detekcji przycisku RD6 (po lewej)
 //    
