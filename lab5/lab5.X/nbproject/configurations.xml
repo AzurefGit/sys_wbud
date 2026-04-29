@@ -21,6 +21,7 @@
                    projectFiles="true">
       <itemPath>buttons.c</itemPath>
       <itemPath>lcd.c</itemPath>
+      <itemPath>newmainXC16.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

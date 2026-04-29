@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=buttons.c lcd.c
+SOURCEFILES_QUOTED_IF_SPACED=buttons.c lcd.c newmainXC16.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/buttons.o ${OBJECTDIR}/lcd.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/lcd.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/buttons.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/newmainXC16.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/lcd.o.d ${OBJECTDIR}/newmainXC16.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/buttons.o ${OBJECTDIR}/lcd.o
+OBJECTFILES=${OBJECTDIR}/buttons.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/newmainXC16.o
 
 # Source Files
-SOURCEFILES=buttons.c lcd.c
+SOURCEFILES=buttons.c lcd.c newmainXC16.c
 
 
 
@@ -101,6 +101,12 @@ ${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/7fca7cd540743e24fd9d34
 	@${RM} ${OBJECTDIR}/lcd.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  lcd.c  -o ${OBJECTDIR}/lcd.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lcd.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/newmainXC16.o: newmainXC16.c  .generated_files/flags/default/2f1eb48b8885baed24277209a7108dba18598fee .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/newmainXC16.o.d 
+	@${RM} ${OBJECTDIR}/newmainXC16.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  newmainXC16.c  -o ${OBJECTDIR}/newmainXC16.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/newmainXC16.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/buttons.o: buttons.c  .generated_files/flags/default/8fddff4c9adfda7459bd5264d29b5bda0169d129 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
@@ -113,6 +119,12 @@ ${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/642258dbfe6be35269a789
 	@${RM} ${OBJECTDIR}/lcd.o.d 
 	@${RM} ${OBJECTDIR}/lcd.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  lcd.c  -o ${OBJECTDIR}/lcd.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lcd.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/newmainXC16.o: newmainXC16.c  .generated_files/flags/default/5c32b88441169aecf09c7569b216becd3b4485ea .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/newmainXC16.o.d 
+	@${RM} ${OBJECTDIR}/newmainXC16.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  newmainXC16.c  -o ${OBJECTDIR}/newmainXC16.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/newmainXC16.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 
